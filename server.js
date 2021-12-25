@@ -15,7 +15,7 @@ var port = process.env.PORT || 8080;
 const db = mysql.createPool(secrets.sql_connection);
 db.getConnection(function (err, conn) {
     if (err) {
-        throw err;
+        console.log(err);
     }
     if (conn) { 
         console.log("Connected!");

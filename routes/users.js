@@ -15,22 +15,6 @@ module.exports = function (router, db) {
             // db.query(sql_query, (err, result) => {
             //     if (err) throw err;
             // });
-            
-            // // Students
-            // if (req.body.acc_type == 1) {
-            //     sql_query = `INSERT INTO Students VALUES
-            //     ('${req.body.netid}', "${req.body.name}", '${req.body.email}')`;
-            // }
-            // // Teachers
-            // else {
-            //     sql_query = `INSERT INTO Teachers VALUES
-            //     ('${req.body.netid}', "${req.body.name}", '${req.body.email}')`;
-            // }
-
-            // db.query(sql_query, (err, result) => {
-            //     if (err) throw err;
-            //     res.json({ data: result });
-            // });
         });
     
     router.route("/users/searchAddress/:address")
