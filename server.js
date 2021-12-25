@@ -37,8 +37,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// Check if app is running on prod
-app.use(express.static('client/build'));
+// Check if app is running on production
 if (process.env.NODE_ENV === 'production') {
     console.log("Production mode");
     app.use(express.static('client/build'));
