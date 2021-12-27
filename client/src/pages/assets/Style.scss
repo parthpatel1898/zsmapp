@@ -131,6 +131,11 @@ footer {
                 float: right;
             }
         }
+
+        .avail-table table {
+            display: inline-block;
+            overflow: scroll;
+        }
     }
 }
 

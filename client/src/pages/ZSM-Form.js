@@ -131,7 +131,7 @@ export default class ZSMForm extends React.Component {
                     />
                   </Form.Group>
       
-                  <Form.Field>
+                  <Form.Field className="avail-table">
                     <label>Availability for Seva:</label>
                     <Table celled unstackable>
                       <Table.Header>
