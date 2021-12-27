@@ -3,6 +3,7 @@ var express = require('express'),
     router = express.Router(),
     secrets = require('./config/secrets'),
     mysql = require("mysql"),
+    path = require("path"),
     bodyParser = require('body-parser');
 
 // Create our Express application
@@ -38,10 +39,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Check if app is running on production
-if (process.env.NODE_ENV === 'production') {
-    console.log("Production mode");
-    app.use(express.static('client/build'));
-}
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "client", "build")));
+    app.get("*", (req, res) => {
+      // don't serve api routes to react app
+      res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    });
+    console.log("Production mode....");
+  }
 
 // Use routes as a module (see index.js)
 require('./routes')(app, router, db);
