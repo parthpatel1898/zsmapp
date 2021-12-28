@@ -38,18 +38,17 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// Use routes as a module (see index.js)
+require('./routes')(app, router, db);
+
 // Check if app is running on production
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "client", "build")));
-    app.get("*", (req, res) => {
-      // don't serve api routes to react app
-      res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    app.use('*', (req, res, next) => {
+        res.sendFile(path.join(__dirname, './client/build/index.html'));
     });
     console.log("Production mode....");
-  }
-
-// Use routes as a module (see index.js)
-require('./routes')(app, router, db);
+}
 
 // Start the server
 app.listen(port, console.log('Server running on port ' + port));
