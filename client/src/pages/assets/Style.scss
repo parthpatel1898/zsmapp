@@ -1,7 +1,7 @@
 /* Body CSS */
 body {
-    -webkit-font-smoothing: antialiased!important;
-    // background: rgb(228, 228, 228);
+    -webkit-font-smoothing: antialiased !important;
+    font-family: "Optima",sans-serif !important;
 }
 
 ::-webkit-scrollbar {display:none;}
@@ -58,21 +58,36 @@ footer {
 
 
 .container {
-    margin-top: 60px;
+    margin-top: 50px;
     // border: 1px solid black;
     padding: 50px 0px;
     min-height: 85vh;
 }
 
 .homePage {
+
+    h2 {
+        text-align: center;
+        font-weight: 700 !important;
+        font-family: "Optima",sans-serif !important;
+        margin-bottom: 5px;
+    }
+    .title-desc {
+        text-align: center;
+        font-family: "Optima",sans-serif !important;
+        color: gray;
+        font-style: italic;
+        margin-bottom: 25px;
+    }
     .searchCol {
         padding: 25px 0px;
         // border: 1px solid black;
         width: 100%;
     }
-    h2 {
+    h3 {
         text-align: center;
-        font-weight: normal;
+        font-weight: 700 !important;
+        font-family: "Optima",sans-serif !important;
     }
     .input {
         width: 75%;
@@ -93,7 +108,8 @@ footer {
     .list {
         .content {
             .description, .header {
-                margin: 5px 0px
+                margin: 5px 0px;
+                font-family: "Optima",sans-serif !important;
             }
 
             &.searchQueryCont {
@@ -112,6 +128,7 @@ footer {
     .header {
         font-size: 40px;
         margin-bottom: 15px !important;
+        font-family: "Optima",sans-serif !important;
     }
 
     .formCont {
@@ -131,11 +148,13 @@ footer {
                 float: right;
             }
         }
+    }
+}
 
-        .avail-table table {
-            display: inline-block;
-            overflow: scroll;
-        }
+@media screen and (max-device-width: 430px) {
+    .avail-table table {
+        display: inline-block;
+        overflow: scroll;
     }
 }
 

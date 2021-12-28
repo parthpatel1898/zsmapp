@@ -79,15 +79,19 @@ export default class Home extends React.Component {
           <Header></Header>
           <Container>
             <div className="homePage">
+              <div>
+                <h2>Zonal Satsangi Milan</h2>
+                <p className="title-desc">Search using your phone number or home address below</p>
+              </div>
               <Grid columns={2} divided stackable>
                 <Grid.Row>
                   <Grid.Column className="searchCol">
-                    <h2>By Phone Number</h2>
+                    <h3>By Phone Number</h3>
                     <Input type="number" placeholder="Ex: 123456790, only enter digits" value={this.state.phoneQuery} onChange={(event)=> {this.setState({phoneQuery: event.target.value})}} />
                     <Button primary disabled={this.state.phoneQuery.length < 7} onClick={() => this.handleSearchPhone()}>Search</Button>
                   </Grid.Column>
                   <Grid.Column className="searchCol">
-                    <h2>By Home Address</h2>
+                    <h3>By Home Address</h3>
                     <Dropdown
                       placeholder='Enter Address'
                       search
